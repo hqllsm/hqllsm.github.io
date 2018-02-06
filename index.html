@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -132,8 +132,10 @@
 <h1 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h1><h3 id="easy-Caesar"><a href="#easy-Caesar" class="headerlink" title="easy Caesar"></a>easy Caesar</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png"></p>
 <p>这题卡了很久，对密文进行凯撒解密发现有一个hgame开头的结果，应该就是我们要的flag，但是提交不上去，后面百度了一下这句话，发现语义为“The quick brown fox jumps over a lazy dog”，结合我们解出来的“The_qu8ck_br7wn_1x_jUmps_ovEr_a_La9y_dOg”，一下子没了思路，后面才知道是数字也要类似凯撒密码进行移位，n=3，即可得到flag。</p>
 <h3 id="Polybius"><a href="#Polybius" class="headerlink" title="Polybius"></a>Polybius</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNvQK.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNvQK.png"></p>
+<p>又是一个没见过的英语单词，放上去百度一下，发现是“波利比奥斯方阵密码”，非常高兴。但是方阵密码是用1-5的数字表示字母密文的。猜想一下，应该是有变形，查找一下，果然是这样。变形的密码用A、D、F、G、X五个字母表示，跟题目给出的内容吻合，完美！<br><img src="https://i.loli.net/2018/02/07/5a79d5adb0e34.png" alt="fz.png"></p>
+<p>两位字母表示一个密文，如AF=a，字母j和i视为同一个字母。得出<br>hgame{fritz_nebel_invented_it}</p>
 <h3 id="Hill"><a href="#Hill" class="headerlink" title="Hill"></a>Hill</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sN7yj.png" alt="https://t1.picb.cc/uploads/2018/02/06/sN7yj.png"></p>
-<p>希尔密码</p>
+<p>老办法，百度一下，发现的希尔密码，秘钥是9 17 6 5，后面的字母是密文。这里有一个在线解密网站：<br><a href="http://www.practicalcryptography.com/ciphers/hill-cipher/" target="_blank" rel="noopener">http://www.practicalcryptography.com/ciphers/hill-cipher/</a><br>跑一下得到flag:hgame{overthehillx}。</p>
 <h3 id="confusion"><a href="#confusion" class="headerlink" title="confusion"></a>confusion</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sN3DN.png" alt="https://t1.picb.cc/uploads/2018/02/06/sN3DN.png"></p>
 <p>摩斯密码：MRLTK6KXNVZXQWBSNA2FSU2GGBSW45BSLAZFU6SVJBNDAZSRHU6Q====</p>
 <p>Base32:dW5yWmsxX2h4YSF0ent2X2ZzUHZ0fQ==</p>
@@ -145,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/" data-id="cjdbrhyp10001kk639rgl5d0e" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/" data-id="cjdbuqlqa00006w63ctgkjy8j" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -214,7 +216,7 @@ void main()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/04/ju5tw4nty0u/" data-id="cjdbrhyp40002kk63m0p4b1u2" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/02/04/ju5tw4nty0u/" data-id="cjdbuqlqu00026w63cg9hs1vn" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -259,7 +261,7 @@ void main()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/03/hello-world/" data-id="cjdbrhyot0000kk63zjkw27z3" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/02/03/hello-world/" data-id="cjdbuqlqg00016w63tamqpq2l" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -285,7 +287,7 @@ void main()
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
     </div>
@@ -295,7 +297,7 @@ void main()
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
@@ -324,7 +326,7 @@ void main()
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
