@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -84,7 +84,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <pre><code>又是一个划水的比赛，又控制不住自己的双手，还是去水了几题，写点东西记录一下吧！！！
-</code></pre><h1 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h1><h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><h3 id="Are-you-from-Europe"><a href="#Are-you-from-Europe" class="headerlink" title="Are you from Europe?"></a>Are you from Europe?</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/s3BsR.png" alt="web1"></p>
+</code></pre><h1 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h1><h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h3 id="Are-you-from-Europe"><a href="#Are-you-from-Europe" class="headerlink" title="Are you from Europe?"></a>Are you from Europe?</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/s3BsR.png" alt="web1"></p>
 <p>打开题目地址，是一个抽奖页面，f12看一下源码</p>
 <p><img src="https://t1.picb.cc/uploads/2018/02/06/s3RWg.png" alt="getcard函数"></p>
 <p>发现有一个getcard的函数，并且SSR的概率极低（0.0000001），我们可以通过重写函数把SSR的概率改为1，通过控制台写入，然后进行抽奖，得到flag：hgame{Th3_Ch0seN_0nE!}</p>
@@ -116,20 +116,20 @@
 <p>题目提示PHP弱类型，参考<a href="http://www.freebuf.com/articles/web/129607.html" target="_blank" rel="noopener">http://www.freebuf.com/articles/web/129607.html</a>，</p>
 <p>我们的payload：str1=123 &amp; str2[]= </p>
 <p>POST提交后可得到flag:flag is:hgame{g3t_f14g_is_so0000_ez}</p>
-<h2 id="re"><a href="#re" class="headerlink" title="re"></a>re</h2><h3 id="re0"><a href="#re0" class="headerlink" title="re0"></a>re0</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNVrM.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNVrM.png"></p>
+<h1 id="re"><a href="#re" class="headerlink" title="re"></a>re</h1><h3 id="re0"><a href="#re0" class="headerlink" title="re0"></a>re0</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNVrM.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNVrM.png"></p>
 <p>下载得到一个re0.exe,用OD打开，查找所有参考文本字符串，即可得到flag。</p>
 <h3 id="baby-crack"><a href="#baby-crack" class="headerlink" title="baby_crack"></a>baby_crack</h3><p>没做出来QAQ</p>
 <h3 id="nop-pop"><a href="#nop-pop" class="headerlink" title="nop_pop"></a>nop_pop</h3><p>没做出来+1QAQ</p>
 <h3 id="sc2-player"><a href="#sc2-player" class="headerlink" title="sc2_player"></a>sc2_player</h3><p>同样没做出来QWQ</p>
-<h2 id="pwn"><a href="#pwn" class="headerlink" title="pwn"></a>pwn</h2><p>对萌新来说太难了，准备花时间好好学学pwn，以pwn签到题为目标。</p>
-<h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="白菜1"><a href="#白菜1" class="headerlink" title="白菜1"></a>白菜1</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNgSt.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNgSt.png"></p>
+<h1 id="pwn"><a href="#pwn" class="headerlink" title="pwn"></a>pwn</h1><p>对萌新来说太难了，准备花时间好好学学pwn，以pwn签到题为目标。</p>
+<h1 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h1><h3 id="白菜1"><a href="#白菜1" class="headerlink" title="白菜1"></a>白菜1</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNgSt.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNgSt.png"></p>
 <p>拿到flag.png,先到binwalk跑一下，发现有一个zlib文件，解开文件又有一个flag_server文件，emmmm感觉这条路走不通</p>
 <p>又试了一下LSB隐写，发现RGB的0通道里面与一个flag.txt,提取出相应的数据，用binwalk分离得到flag.txt,打开即可得到flag。</p>
 <h3 id="白菜2"><a href="#白菜2" class="headerlink" title="白菜2"></a>白菜2</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNZcr.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNZcr.png"></p>
 <p>拿到一张misc.jpg,binwalk看一下，发现有一个zip压缩包，分离出来解压缩即可得到flag。</p>
 <h3 id="pacp1"><a href="#pacp1" class="headerlink" title="pacp1"></a>pacp1</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNCSv.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNCSv.png"></p>
 <p>典型的流量分析，用wireshark打开，筛选HTTP流量，发现第557个包有一个访问flag.php的请求，第559个包回复相关信息，查看详细字段即可得到flag。</p>
-<h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="easy-Caesar"><a href="#easy-Caesar" class="headerlink" title="easy Caesar"></a>easy Caesar</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png"></p>
+<h1 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h1><h3 id="easy-Caesar"><a href="#easy-Caesar" class="headerlink" title="easy Caesar"></a>easy Caesar</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png"></p>
 <p>这题卡了很久，对密文进行凯撒解密发现有一个hgame开头的结果，应该就是我们要的flag，但是提交不上去，后面百度了一下这句话，发现语义为“The quick brown fox jumps over a lazy dog”，结合我们解出来的“The_qu8ck_br7wn_1x_jUmps_ovEr_a_La9y_dOg”，一下子没了思路，后面才知道是数字也要类似凯撒密码进行移位，n=3，即可得到flag。</p>
 <h3 id="Polybius"><a href="#Polybius" class="headerlink" title="Polybius"></a>Polybius</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNvQK.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNvQK.png"></p>
 <h3 id="Hill"><a href="#Hill" class="headerlink" title="Hill"></a>Hill</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sN7yj.png" alt="https://t1.picb.cc/uploads/2018/02/06/sN7yj.png"></p>
@@ -145,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/" data-id="cjdbr9i4q0000dw639214gkza" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/" data-id="cjdbrgbtw0001uo63b2do50sa" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -214,7 +214,7 @@ void main()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/04/ju5tw4nty0u/" data-id="cjdbr9i530002dw63b5jl77wq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/04/ju5tw4nty0u/" data-id="cjdbrgbuv0002uo63bqcy3hnx" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -259,7 +259,7 @@ void main()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/03/hello-world/" data-id="cjdbr9i4z0001dw639jumqjoj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/03/hello-world/" data-id="cjdbrgbtr0000uo632ljw0wmm" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -285,7 +285,7 @@ void main()
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
     </div>
@@ -295,7 +295,7 @@ void main()
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
