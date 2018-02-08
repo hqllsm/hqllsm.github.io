@@ -102,7 +102,7 @@
 <meta property="og:image" content="https://i.loli.net/2018/02/07/5a79d5adb0e34.png">
 <meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sN7yj.png">
 <meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sN3DN.png">
-<meta property="og:updated_time" content="2018-02-08T08:16:54.040Z">
+<meta property="og:updated_time" content="2018-02-08T13:35:33.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hgame（week_1）-----未完待续">
 <meta name="twitter:description" content="又是一个划水的比赛，又控制不住自己的双手，还是去水了几题，写点东西记录一下吧！！！ week1webAre you from Europe? 打开题目地址，是一个抽奖页面，f12看一下源码  发现有一个getcard的函数，并且SSR的概率极低（0.0000001），我们可以通过重写函数把SSR的概率改为1，通过控制台写入，然后进行抽奖，得到flag：hgame{Th3_Ch0seN_0nE!}">
@@ -395,7 +395,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,013
+                  1,018
                 </span>
               
 
@@ -441,15 +441,7 @@
 <p>需要构造X-Forwarded-For: 127.0.0.1来实现本地访问</p>
 <p>通过burp修改请求头可以得到flag：hgame{For9e_hTTp_iS_N0T_HArd}</p>
 <h3 id="我们不一样"><a href="#我们不一样" class="headerlink" title="我们不一样"></a>我们不一样</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNyx6.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNyx6.png"><br>代码如下：</p>
-<p><code>include_once(&quot;flag.php&quot;);
-    if(isset($_POST[&#39;str1&#39;])&amp;&amp;isset($_POST[&#39;str2&#39;])){
-        if ($_POST[&#39;str1&#39;]!=$_POST[&#39;str2&#39;]&amp;&amp;strcmp($_POST[&#39;str1&#39;],$_POST[&#39;str2&#39;])==0) {
-            echo &quot;flag is:&quot;.$flag;
-            exit();
-        } else{
-            echo &quot;Something wrong..&quot;;
-        }
-    }</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if(isset($_POST[&apos;str1&apos;])&amp;&amp;isset($_POST[&apos;str2&apos;]))&#123;</span><br><span class="line">    if ($_POST[&apos;str1&apos;]!=$_POST[&apos;str2&apos;]&amp;&amp;strcmp($_POST[&apos;str1&apos;],$_POST[&apos;str2&apos;])==0) &#123;</span><br><span class="line">        echo &quot;flag is:&quot;.$flag;</span><br><span class="line">        exit();</span><br><span class="line">    &#125; else&#123;</span><br><span class="line">        echo &quot;Something wrong..&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>题目提示PHP弱类型，参考<a href="http://www.freebuf.com/articles/web/129607.html" target="_blank" rel="noopener">http://www.freebuf.com/articles/web/129607.html</a>，</p>
 <p>我们的payload：str1=123 &amp; str2[]= </p>
 <p>POST提交后可得到flag:flag is:hgame{g3t_f14g_is_so0000_ez}</p>
