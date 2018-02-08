@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="又是一个划水的比赛，又控制不住自己的双手，还是去水了几题，写点东西记录一下吧！！！ week1webAre you from Europe? 打开题目地址，是一个抽奖页面，f12看一下源码  发现有一个getcard的函数，并且SSR的概率极低（0.0000001），我们可以通过重写函数把SSR的概率改为1，通过控制台写入，然后进行抽奖，得到flag：hgame{Th3_Ch0seN_0nE!}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hgame（week_1）-----未完待续">
+<meta property="og:url" content="http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="又是一个划水的比赛，又控制不住自己的双手，还是去水了几题，写点东西记录一下吧！！！ week1webAre you from Europe? 打开题目地址，是一个抽奖页面，f12看一下源码  发现有一个getcard的函数，并且SSR的概率极低（0.0000001），我们可以通过重写函数把SSR的概率改为1，通过控制台写入，然后进行抽奖，得到flag：hgame{Th3_Ch0seN_0nE!}">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/s3BsR.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/s3RWg.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/s3xRX.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/s39kG.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/s3U0j.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/s3oW7.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sNyx6.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sNVrM.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sNgSt.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sNZcr.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sNCSv.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sNvQK.png">
+<meta property="og:image" content="https://i.loli.net/2018/02/07/5a79d5adb0e34.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sN7yj.png">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/02/06/sN3DN.png">
+<meta property="og:updated_time" content="2018-02-06T16:26:38.052Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hgame（week_1）-----未完待续">
+<meta name="twitter:description" content="又是一个划水的比赛，又控制不住自己的双手，还是去水了几题，写点东西记录一下吧！！！ week1webAre you from Europe? 打开题目地址，是一个抽奖页面，f12看一下源码  发现有一个getcard的函数，并且SSR的概率极低（0.0000001），我们可以通过重写函数把SSR的概率改为1，通过控制台写入，然后进行抽奖，得到flag：hgame{Th3_Ch0seN_0nE!}">
+<meta name="twitter:image" content="https://t1.picb.cc/uploads/2018/02/06/s3BsR.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/"/>
+
+
+
+
+
+  <title>hgame（week_1）-----未完待续 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/headlogo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hgame（week_1）-----未完待续</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-06T20:28:59+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/06/hgame（weekek-1）-未完待续/" class="leancloud_visitors" data-flag-title="hgame（week_1）-----未完待续">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1,013
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>又是一个划水的比赛，又控制不住自己的双手，还是去水了几题，写点东西记录一下吧！！！
+</code></pre><h1 id="week1"><a href="#week1" class="headerlink" title="week1"></a>week1</h1><h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h3 id="Are-you-from-Europe"><a href="#Are-you-from-Europe" class="headerlink" title="Are you from Europe?"></a>Are you from Europe?</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/s3BsR.png" alt="web1"></p>
+<p>打开题目地址，是一个抽奖页面，f12看一下源码</p>
+<p><img src="https://t1.picb.cc/uploads/2018/02/06/s3RWg.png" alt="getcard函数"></p>
+<p>发现有一个getcard的函数，并且SSR的概率极低（0.0000001），我们可以通过重写函数把SSR的概率改为1，通过控制台写入，然后进行抽奖，得到flag：hgame{Th3_Ch0seN_0nE!}</p>
+<h3 id="special-number"><a href="#special-number" class="headerlink" title="special number"></a>special number</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/s3xRX.png" alt="https://t1.picb.cc/uploads/2018/02/06/s3xRX.png"><br>题目提示PHP弱类型</p>
+<p>这里参考了<a href="http://www.freebuf.com/articles/web/129607.html" target="_blank" rel="noopener">http://www.freebuf.com/articles/web/129607.html</a>这篇文章</p>
+<p>然后分析源码<br><img src="https://t1.picb.cc/uploads/2018/02/06/s39kG.png" alt="https://t1.picb.cc/uploads/2018/02/06/s39kG.png"></p>
+<p>我们还需要绕过正则表达式，</p>
+<p>构造payload:<a href="http://118.25.18.223:10001/?key=0e000000000000000000000来获取flag（0e" target="_blank" rel="noopener">http://118.25.18.223:10001/?key=0e000000000000000000000来获取flag（0e</a> 纯数字这种格式的字符串在判断相等的时候会被认为是科学计数法的数字，先做字符串到数字的转换）</p>
+<p>提交后即可得到flag：hgame{pHp_w34k_typing_s000_e4sy}。</p>
+<h3 id="can-u-find-me"><a href="#can-u-find-me" class="headerlink" title="can u find me?"></a>can u find me?</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/s3U0j.png" alt="https://t1.picb.cc/uploads/2018/02/06/s3U0j.png"></p>
+<p>打开题目地址提示only robot know where is the flag ，我们可以想到robots.txt文件</p>
+<p>访问robots.txt可以看到一个/f1aaaaaaaag.php的页面</p>
+<p>访问该页面提示only admin can get flag</p>
+<p>通过burp抓包改一下user=admin即可得到flag。</p>
+<h3 id="tell-me-what-you-want"><a href="#tell-me-what-you-want" class="headerlink" title="tell me what you want"></a>tell me what you want</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/s3oW7.png" alt="https://t1.picb.cc/uploads/2018/02/06/s3oW7.png"><br>根据题目提示提交?want=flag,提示“request method is error.I think POST is better”</p>
+<p>改用POST提交，提示“only localhost can get flag”</p>
+<p>需要构造X-Forwarded-For: 127.0.0.1来实现本地访问</p>
+<p>通过burp修改请求头可以得到flag：hgame{For9e_hTTp_iS_N0T_HArd}</p>
+<h3 id="我们不一样"><a href="#我们不一样" class="headerlink" title="我们不一样"></a>我们不一样</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNyx6.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNyx6.png"><br>代码如下：</p>
+<p><code>include_once(&quot;flag.php&quot;);
+    if(isset($_POST[&#39;str1&#39;])&amp;&amp;isset($_POST[&#39;str2&#39;])){
+        if ($_POST[&#39;str1&#39;]!=$_POST[&#39;str2&#39;]&amp;&amp;strcmp($_POST[&#39;str1&#39;],$_POST[&#39;str2&#39;])==0) {
+            echo &quot;flag is:&quot;.$flag;
+            exit();
+        } else{
+            echo &quot;Something wrong..&quot;;
+        }
+    }</code></p>
+<p>题目提示PHP弱类型，参考<a href="http://www.freebuf.com/articles/web/129607.html" target="_blank" rel="noopener">http://www.freebuf.com/articles/web/129607.html</a>，</p>
+<p>我们的payload：str1=123 &amp; str2[]= </p>
+<p>POST提交后可得到flag:flag is:hgame{g3t_f14g_is_so0000_ez}</p>
+<h1 id="re"><a href="#re" class="headerlink" title="re"></a>re</h1><h3 id="re0"><a href="#re0" class="headerlink" title="re0"></a>re0</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNVrM.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNVrM.png"></p>
+<p>下载得到一个re0.exe,用OD打开，查找所有参考文本字符串，即可得到flag。</p>
+<h3 id="baby-crack"><a href="#baby-crack" class="headerlink" title="baby_crack"></a>baby_crack</h3><p>没做出来QAQ</p>
+<h3 id="nop-pop"><a href="#nop-pop" class="headerlink" title="nop_pop"></a>nop_pop</h3><p>没做出来+1QAQ</p>
+<h3 id="sc2-player"><a href="#sc2-player" class="headerlink" title="sc2_player"></a>sc2_player</h3><p>同样没做出来QWQ</p>
+<h1 id="pwn"><a href="#pwn" class="headerlink" title="pwn"></a>pwn</h1><p>对萌新来说太难了，准备花时间好好学学pwn，以pwn签到题为目标。</p>
+<h1 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h1><h3 id="白菜1"><a href="#白菜1" class="headerlink" title="白菜1"></a>白菜1</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNgSt.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNgSt.png"></p>
+<p>拿到flag.png,先到binwalk跑一下，发现有一个zlib文件，emmmm然后卡住了，感觉这条路走不通</p>
+<p>又试了一下LSB隐写，发现RGB的0通道里面与一个flag.txt,提取出相应的数据，用binwalk分离得到flag.txt,打开即可得到flag。</p>
+<h3 id="白菜2"><a href="#白菜2" class="headerlink" title="白菜2"></a>白菜2</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNZcr.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNZcr.png"></p>
+<p>拿到一张misc.jpg,binwalk看一下，发现有一个zip压缩包，分离出来解压缩即可得到flag。</p>
+<h3 id="pacp1"><a href="#pacp1" class="headerlink" title="pacp1"></a>pacp1</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNCSv.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNCSv.png"></p>
+<p>典型的流量分析，用wireshark打开，筛选HTTP流量，发现第557个包有一个访问flag.php的请求，第559个包回复相关信息，查看详细字段即可得到flag。</p>
+<h1 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h1><h3 id="easy-Caesar"><a href="#easy-Caesar" class="headerlink" title="easy Caesar"></a>easy Caesar</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNmyi.png"></p>
+<p>这题卡了很久，对密文进行凯撒解密发现有一个hgame开头的结果，应该就是我们要的flag，但是提交不上去，后面百度了一下这句话，发现语义为“The quick brown fox jumps over a lazy dog”，结合我们解出来的“The_qu8ck_br7wn_1x_jUmps_ovEr_a_La9y_dOg”，一下子没了思路，后面才知道是数字也要类似凯撒密码进行移位，n=3，即可得到flag。</p>
+<h3 id="Polybius"><a href="#Polybius" class="headerlink" title="Polybius"></a>Polybius</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sNvQK.png" alt="https://t1.picb.cc/uploads/2018/02/06/sNvQK.png"></p>
+<p>又是一个没见过的英语单词，放上去百度一下，发现是“波利比奥斯方阵密码”，非常高兴。但是方阵密码是用1-5的数字表示字母密文的。猜想一下，应该是有变形，查找一下，果然是这样。变形的密码用A、D、F、G、X五个字母表示，跟题目给出的内容吻合，完美！<br><img src="https://i.loli.net/2018/02/07/5a79d5adb0e34.png" alt="fz.png"></p>
+<p>两位字母表示一个密文，如AF=a，字母j和i视为同一个字母。得出<br>hgame{fritz_nebel_invented_it}</p>
+<h3 id="Hill"><a href="#Hill" class="headerlink" title="Hill"></a>Hill</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sN7yj.png" alt="https://t1.picb.cc/uploads/2018/02/06/sN7yj.png"></p>
+<p>老办法，百度一下，发现的希尔密码，秘钥是9 17 6 5，后面的字母是密文。这里有一个在线解密网站：<br><a href="http://www.practicalcryptography.com/ciphers/hill-cipher/" target="_blank" rel="noopener">http://www.practicalcryptography.com/ciphers/hill-cipher/</a><br>跑一下得到flag:hgame{overthehillx}。</p>
+<h3 id="confusion"><a href="#confusion" class="headerlink" title="confusion"></a>confusion</h3><p><img src="https://t1.picb.cc/uploads/2018/02/06/sN3DN.png" alt="https://t1.picb.cc/uploads/2018/02/06/sN3DN.png"></p>
+<p>摩斯密码：MRLTK6KXNVZXQWBSNA2FSU2GGBSW45BSLAZFU6SVJBNDAZSRHU6Q====</p>
+<p>Base32:dW5yWmsxX2h4YSF0ent2X2ZzUHZ0fQ==</p>
+<p>Base64 : unrZk1_hxa!tz{v_fsPvt}</p>
+<p>栅栏: n=2 unrZk1_hxa!tz{v_fsPvt}</p>
+<p>凯撒: hgame{Mix_1s_fuCking!}</p>
+<h3 id="baby-step"><a href="#baby-step" class="headerlink" title="baby step"></a>baby step</h3><p>没解出来QAQ</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        
+    <div style="text-align:center;color: #CDBA96;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+    
+      </div>
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    John Doe
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/" title="hgame（week_1）-----未完待续">http://yoursite.com/2018/02/06/hgame（weekek-1）-未完待续/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/04/ju5tw4nty0u/" rel="next" title="ju5tw4nty0u">
+                <i class="fa fa-chevron-left"></i> ju5tw4nty0u
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/08/next-test/" rel="prev" title="next-test">
+                next-test <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzk5OC8xMDUzMw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/headlogo.jpg"
+                alt="John Doe" />
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hqllsm" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:923351163@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="M" title="0" target="_blank">0</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="O" title="1" target="_blank">1</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="C" title="2" target="_blank">2</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="T" title="3" target="_blank">3</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="F" title="4" target="_blank">4</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="：" title="5" target="_blank">5</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href=" " title="6" target="_blank">6</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="h" title="7" target="_blank">7</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="t" title="8" target="_blank">8</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="t" title="9" target="_blank">9</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="p" title="10" target="_blank">10</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href=":" title="11" target="_blank">11</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/" title="12" target="_blank">12</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/" title="13" target="_blank">13</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="w" title="14" target="_blank">14</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="w" title="15" target="_blank">15</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="w" title="16" target="_blank">16</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="." title="17" target="_blank">17</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="m" title="18" target="_blank">18</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="o" title="19" target="_blank">19</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="c" title="20" target="_blank">20</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="t" title="21" target="_blank">21</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="f" title="22" target="_blank">22</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="." title="23" target="_blank">23</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="c" title="24" target="_blank">24</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="o" title="25" target="_blank">25</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="m" title="26" target="_blank">26</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/" title="27" target="_blank">27</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#week1"><span class="nav-number">1.</span> <span class="nav-text">week1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web"><span class="nav-number">2.</span> <span class="nav-text">web</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Are-you-from-Europe"><span class="nav-number">2.0.1.</span> <span class="nav-text">Are you from Europe?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#special-number"><span class="nav-number">2.0.2.</span> <span class="nav-text">special number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#can-u-find-me"><span class="nav-number">2.0.3.</span> <span class="nav-text">can u find me?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tell-me-what-you-want"><span class="nav-number">2.0.4.</span> <span class="nav-text">tell me what you want</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们不一样"><span class="nav-number">2.0.5.</span> <span class="nav-text">我们不一样</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#re"><span class="nav-number">3.</span> <span class="nav-text">re</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#re0"><span class="nav-number">3.0.1.</span> <span class="nav-text">re0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#baby-crack"><span class="nav-number">3.0.2.</span> <span class="nav-text">baby_crack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nop-pop"><span class="nav-number">3.0.3.</span> <span class="nav-text">nop_pop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sc2-player"><span class="nav-number">3.0.4.</span> <span class="nav-text">sc2_player</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pwn"><span class="nav-number">4.</span> <span class="nav-text">pwn</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#misc"><span class="nav-number">5.</span> <span class="nav-text">misc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#白菜1"><span class="nav-number">5.0.1.</span> <span class="nav-text">白菜1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#白菜2"><span class="nav-number">5.0.2.</span> <span class="nav-text">白菜2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pacp1"><span class="nav-number">5.0.3.</span> <span class="nav-text">pacp1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#crypto"><span class="nav-number">6.</span> <span class="nav-text">crypto</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#easy-Caesar"><span class="nav-number">6.0.1.</span> <span class="nav-text">easy Caesar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Polybius"><span class="nav-number">6.0.2.</span> <span class="nav-text">Polybius</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hill"><span class="nav-number">6.0.3.</span> <span class="nav-text">Hill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#confusion"><span class="nav-number">6.0.4.</span> <span class="nav-text">confusion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#baby-step"><span class="nav-number">6.0.5.</span> <span class="nav-text">baby step</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">1.3k</span>
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("duu7TJQYDmAC66inoqeJ1ld6-gzGzoHsz", "hD34driPrUoThK3W7D13Jh2C");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
