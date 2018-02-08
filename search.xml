@@ -9,11 +9,19 @@
     <title><![CDATA[hgame（week_1）-----未完待续]]></title>
     <url>%2F2018%2F02%2F06%2Fhgame%EF%BC%88weekek-1%EF%BC%89-%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD%2F</url>
     <content type="text"><![CDATA[又是一个划水的比赛，又控制不住自己的双手，还是去水了几题，写点东西记录一下吧！！！ week1webAre you from Europe? 打开题目地址，是一个抽奖页面，f12看一下源码 发现有一个getcard的函数，并且SSR的概率极低（0.0000001），我们可以通过重写函数把SSR的概率改为1，通过控制台写入，然后进行抽奖，得到flag：hgame{Th3_Ch0seN_0nE!} special number题目提示PHP弱类型 这里参考了http://www.freebuf.com/articles/web/129607.html这篇文章 然后分析源码 我们还需要绕过正则表达式， 构造payload:http://118.25.18.223:10001/?key=0e000000000000000000000来获取flag（0e 纯数字这种格式的字符串在判断相等的时候会被认为是科学计数法的数字，先做字符串到数字的转换） 提交后即可得到flag：hgame{pHp_w34k_typing_s000_e4sy}。 can u find me? 打开题目地址提示only robot know where is the flag ，我们可以想到robots.txt文件 访问robots.txt可以看到一个/f1aaaaaaaag.php的页面 访问该页面提示only admin can get flag 通过burp抓包改一下user=admin即可得到flag。 tell me what you want根据题目提示提交?want=flag,提示“request method is error.I think POST is better” 改用POST提交，提示“only localhost can get flag” 需要构造X-Forwarded-For: 127.0.0.1来实现本地访问 通过burp修改请求头可以得到flag：hgame{For9e_hTTp_iS_N0T_HArd} 我们不一样代码如下： include_once(&quot;flag.php&quot;); if(isset($_POST[&#39;str1&#39;])&amp;&amp;isset($_POST[&#39;str2&#39;])){ if ($_POST[&#39;str1&#39;]!=$_POST[&#39;str2&#39;]&amp;&amp;strcmp($_POST[&#39;str1&#39;],$_POST[&#39;str2&#39;])==0) { echo &quot;flag is:&quot;.$flag; exit(); } else{ echo &quot;Something wrong..&quot;; } } 题目提示PHP弱类型，参考http://www.freebuf.com/articles/web/129607.html， 我们的payload：str1=123 &amp; str2[]= POST提交后可得到flag:flag is:hgame{g3t_f14g_is_so0000_ez} rere0 下载得到一个re0.exe,用OD打开，查找所有参考文本字符串，即可得到flag。 baby_crack没做出来QAQ nop_pop没做出来+1QAQ sc2_player同样没做出来QWQ pwn对萌新来说太难了，准备花时间好好学学pwn，以pwn签到题为目标。 misc白菜1 拿到flag.png,先到binwalk跑一下，发现有一个zlib文件，emmmm然后卡住了，感觉这条路走不通 又试了一下LSB隐写，发现RGB的0通道里面与一个flag.txt,提取出相应的数据，用binwalk分离得到flag.txt,打开即可得到flag。 白菜2 拿到一张misc.jpg,binwalk看一下，发现有一个zip压缩包，分离出来解压缩即可得到flag。 pacp1 典型的流量分析，用wireshark打开，筛选HTTP流量，发现第557个包有一个访问flag.php的请求，第559个包回复相关信息，查看详细字段即可得到flag。 cryptoeasy Caesar 这题卡了很久，对密文进行凯撒解密发现有一个hgame开头的结果，应该就是我们要的flag，但是提交不上去，后面百度了一下这句话，发现语义为“The quick brown fox jumps over a lazy dog”，结合我们解出来的“The_qu8ck_br7wn_1x_jUmps_ovEr_a_La9y_dOg”，一下子没了思路，后面才知道是数字也要类似凯撒密码进行移位，n=3，即可得到flag。 Polybius 又是一个没见过的英语单词，放上去百度一下，发现是“波利比奥斯方阵密码”，非常高兴。但是方阵密码是用1-5的数字表示字母密文的。猜想一下，应该是有变形，查找一下，果然是这样。变形的密码用A、D、F、G、X五个字母表示，跟题目给出的内容吻合，完美！ 两位字母表示一个密文，如AF=a，字母j和i视为同一个字母。得出hgame{fritz_nebel_invented_it} Hill 老办法，百度一下，发现的希尔密码，秘钥是9 17 6 5，后面的字母是密文。这里有一个在线解密网站：http://www.practicalcryptography.com/ciphers/hill-cipher/跑一下得到flag:hgame{overthehillx}。 confusion 摩斯密码：MRLTK6KXNVZXQWBSNA2FSU2GGBSW45BSLAZFU6SVJBNDAZSRHU6Q==== Base32:dW5yWmsxX2h4YSF0ent2X2ZzUHZ0fQ== Base64 : unrZk1_hxa!tz{v_fsPvt} 栅栏: n=2 unrZk1_hxa!tz{v_fsPvt} 凯撒: hgame{Mix_1s_fuCking!} baby step没解出来QAQ]]></content>
+      <tags>
+        <tag>CTF</tag>
+        <tag>WP</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[ju5tw4nty0u]]></title>
     <url>%2F2018%2F02%2F04%2Fju5tw4nty0u%2F</url>
     <content type="text"><![CDATA[Markdown语法的简要规则标题标题是每篇文章都需要的也是最常用的格式，在Markdown中，如果一段文字被定义为标题，只要在这段文字前加上#号即可，1-6级标题对应相应的#号。（建议在#号后面加一个空格） 列表列表分为有序列表和无序列表，在文字前加上-或者*即可变为无序列表；在文字前加上1. 2. 3.符号则表示成有序列表。 无序列表 1 2 3 有序列表 111 222 333 引用只需要在文本前面加上&gt;号即可。 引用名言警句 图片与链接图片为：! [] () 链接为：[] () 插入链接不会点这里 插入图片 粗体和斜体这里是粗体 这里是斜体 表格暂时还不会 代码框#include&lt;stdio.h&gt; void main() { printf(&quot;helloworld!!!&quot;); return 0; } 分割线分割线使用三个 * 号 分割线QAQ]]></content>
+      <tags>
+        <tag>tools</tag>
+        <tag>blog</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
