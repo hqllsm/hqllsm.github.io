@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[BugKu新赛季（持续更新）]]></title>
+    <url>%2F2018%2F02%2F11%2FBugKu%E6%96%B0%E8%B5%9B%E5%AD%A3%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[BugKu新赛季题目地址：http://ctf.bugku.com/challenges 杂项签到题关注BugKu的微信公众号即可获取flag； 这是一张单纯的图片下载图片用winhex打开，可以看到末尾有一段奇怪的字符串1#107;&amp;#101;&amp;#121;&amp;#123;&amp;#121;&amp;#111;&amp;#117;&amp;#32;&amp;#97;&amp;#114;&amp;#101;&amp;#32;&amp;#114;&amp;#105;&amp;#103;&amp;#104;&amp;#116;&amp;#125; 第一直觉用ASCII表来对照一下，发现就是我们所要的flag； 隐写首先打开图片看一下，发现像素是500X420，这里想到可能是png像素隐写，这里参考余老师的一篇文章png像素隐写我们用winhex将像素调整为500X500后，可以在图片下方得到我们所要的flag； telnet这是一个流量分析题，用wireshark打开流量包分析，发现这是一个登陆的过程，flag是password，所以找到输入的password，我们可以得到flag；123456Frame 41: 92 bytes on wire (736 bits), 92 bytes captured (736 bits)Ethernet II, Src: Vmware_84:86:5f (00:0c:29:84:86:5f), Dst: Vmware_26:7e:0e (00:0c:29:26:7e:0e)Internet Protocol Version 4, Src: 192.168.221.128, Dst: 192.168.221.164Transmission Control Protocol, Src Port: 1146, Dst Port: 23, Seq: 83, Ack: 124, Len: 38Telnet Data: flag&#123;d316759c281bf925d600be698a4973d5&#125; 眼见非实（ISCCCTF）下载下来发现在win下打不来，但是文件名提示是zip，应该是一个压缩包，这里我直接把文件放到kali里面打开，得到一些.xml的文件，一个个看过去，在document.xml里面找到了flag；123456789101112131415161718192021222324-&lt;w:p w:rsidRDefault=&quot;002B3D8D&quot; w:rsidR=&quot;002B3D8D&quot;&gt;-&lt;w:r&gt;&lt;w:t&gt;Flag&lt;/w:t&gt;&lt;/w:r&gt;-&lt;w:r&gt;&lt;w:t&gt;在这里呦！&lt;/w:t&gt;&lt;/w:r&gt;&lt;/w:p&gt;-&lt;w:p w:rsidRDefault=&quot;002B3D8D&quot; w:rsidR=&quot;002B3D8D&quot; w:rsidRPr=&quot;002B3D8D&quot;&gt;-&lt;w:pPr&gt;-&lt;w:rPr&gt;&lt;w:rFonts w:hint=&quot;eastAsia&quot;/&gt;&lt;w:vanish/&gt;&lt;/w:rPr&gt;&lt;/w:pPr&gt;-&lt;w:r w:rsidRPr=&quot;002B3D8D&quot;&gt;-&lt;w:rPr&gt;&lt;w:vanish/&gt;&lt;/w:rPr&gt;&lt;w:t&gt;flag&#123;F1@g&#125;&lt;/w:t&gt;&lt;/w:r&gt;&lt;w:bookmarkStart w:name=&quot;_GoBack&quot; w:id=&quot;0&quot;/&gt;&lt;w:bookmarkEnd w:id=&quot;0&quot;/&gt;&lt;/w:p&gt; 又一张图片，还单纯吗下载图片，用binwalk看一下，发现有多个文件，用foremost命令分离出来，发现flag就在分离出来的图片上； 猜有点儿脑洞，题目给了一张只有一半头像的图片，让我们猜这个人的名字，这里我直接用百度图片的搜索功能找出这个人就是刘亦菲，flag get； 宽带信息泄露隐写2得到一张图片，用binwalk分析一下，有一个压缩包，分离出来后图片上提示压缩包密码3位数，所以直接暴力破解，密码是871，解压后是一张3.jpg的图片，用winhex打开，在末尾看到一串字符1f1@g&#123;eTB1IEFyZSBhIGhAY2tlciE=&#125; 直接提交发现不对，然后对flag里面的字符串进行base64解码，得到123\x79 \x30 \x75 \x20 \x41 \x72 \x65 \x20 \x61 \x20 \x68 \x40 \x63 \x6b \x65 \x72 \x21 接着我们将其转换成ASCII，在线转换地址：http://www.ab126.com/goju/1711.html,可以得到flag； 123\y \0 \u \ \A \r \e \ \a \ \h \@ \c \k \e \r \! 这里提交的时候要把前面的f1@g改成flag，我也是试了几次才对的。]]></content>
+      <tags>
+        <tag>-ctf</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[next-test]]></title>
     <url>%2F2018%2F02%2F08%2Fnext-test%2F</url>
     <content type="text"></content>
