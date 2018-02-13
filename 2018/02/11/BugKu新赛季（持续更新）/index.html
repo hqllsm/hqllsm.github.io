@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/11/BugKu新赛季（持续更新）/index.html">
 <meta property="og:site_name" content="JWYBlog">
 <meta property="og:description" content="BugKu新赛季题目地址：http://ctf.bugku.com/challenges 杂项签到题关注BugKu的微信公众号即可获取flag； 这是一张单纯的图片下载图片用winhex打开，可以看到末尾有一段奇怪的字符串1#107;&amp;amp;#101;&amp;amp;#121;&amp;amp;#123;&amp;amp;#121;&amp;amp;#111;&amp;amp;#117;&amp;amp;#32;&amp;amp;#97;&amp;amp;">
-<meta property="og:updated_time" content="2018-02-11T15:56:04.483Z">
+<meta property="og:updated_time" content="2018-02-11T18:34:05.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BugKu新赛季（持续更新）">
 <meta name="twitter:description" content="BugKu新赛季题目地址：http://ctf.bugku.com/challenges 杂项签到题关注BugKu的微信公众号即可获取flag； 这是一张单纯的图片下载图片用winhex打开，可以看到末尾有一段奇怪的字符串1#107;&amp;amp;#101;&amp;amp;#121;&amp;amp;#123;&amp;amp;#121;&amp;amp;#111;&amp;amp;#117;&amp;amp;#32;&amp;amp;#97;&amp;amp;">
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  786
+                  1,135
                 </span>
               
 
@@ -412,11 +412,17 @@
 <h3 id="眼见非实（ISCCCTF）"><a href="#眼见非实（ISCCCTF）" class="headerlink" title="眼见非实（ISCCCTF）"></a>眼见非实（ISCCCTF）</h3><p>下载下来发现在win下打不来，但是文件名提示是zip，应该是一个压缩包，这里我直接把文件放到kali里面打开，得到一些.xml的文件，一个个看过去，在document.xml里面找到了flag；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">-&lt;w:p w:rsidRDefault=&quot;002B3D8D&quot; w:rsidR=&quot;002B3D8D&quot;&gt;</span><br><span class="line">-&lt;w:r&gt;</span><br><span class="line">&lt;w:t&gt;Flag&lt;/w:t&gt;</span><br><span class="line">&lt;/w:r&gt;</span><br><span class="line">-&lt;w:r&gt;</span><br><span class="line">&lt;w:t&gt;在这里呦！&lt;/w:t&gt;</span><br><span class="line">&lt;/w:r&gt;</span><br><span class="line">&lt;/w:p&gt;</span><br><span class="line">-&lt;w:p w:rsidRDefault=&quot;002B3D8D&quot; w:rsidR=&quot;002B3D8D&quot; w:rsidRPr=&quot;002B3D8D&quot;&gt;</span><br><span class="line">-&lt;w:pPr&gt;</span><br><span class="line">-&lt;w:rPr&gt;</span><br><span class="line">&lt;w:rFonts w:hint=&quot;eastAsia&quot;/&gt;</span><br><span class="line">&lt;w:vanish/&gt;</span><br><span class="line">&lt;/w:rPr&gt;</span><br><span class="line">&lt;/w:pPr&gt;</span><br><span class="line">-&lt;w:r w:rsidRPr=&quot;002B3D8D&quot;&gt;</span><br><span class="line">-&lt;w:rPr&gt;</span><br><span class="line">&lt;w:vanish/&gt;</span><br><span class="line">&lt;/w:rPr&gt;</span><br><span class="line">&lt;w:t&gt;flag&#123;F1@g&#125;&lt;/w:t&gt;</span><br><span class="line">&lt;/w:r&gt;</span><br><span class="line">&lt;w:bookmarkStart w:name=&quot;_GoBack&quot; w:id=&quot;0&quot;/&gt;</span><br><span class="line">&lt;w:bookmarkEnd w:id=&quot;0&quot;/&gt;</span><br><span class="line">&lt;/w:p&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="又一张图片，还单纯吗"><a href="#又一张图片，还单纯吗" class="headerlink" title="又一张图片，还单纯吗"></a>又一张图片，还单纯吗</h3><p>下载图片，用binwalk看一下，发现有多个文件，用foremost命令分离出来，发现flag就在分离出来的图片上；</p>
 <h3 id="猜"><a href="#猜" class="headerlink" title="猜"></a>猜</h3><p>有点儿脑洞，题目给了一张只有一半头像的图片，让我们猜这个人的名字，这里我直接用百度图片的搜索功能找出这个人就是刘亦菲，flag get；</p>
-<h3 id="宽带信息泄露"><a href="#宽带信息泄露" class="headerlink" title="宽带信息泄露"></a>宽带信息泄露</h3><h3 id="隐写2"><a href="#隐写2" class="headerlink" title="隐写2"></a>隐写2</h3><p>得到一张图片，用binwalk分析一下，有一个压缩包，分离出来后图片上提示压缩包密码3位数，所以直接暴力破解，密码是871，解压后是一张3.jpg的图片，用winhex打开，在末尾看到一串字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1@g&#123;eTB1IEFyZSBhIGhAY2tlciE=&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="宽带信息泄露"><a href="#宽带信息泄露" class="headerlink" title="宽带信息泄露"></a>宽带信息泄露</h3><p>下载得到一个bin文件，应该是一个配置文件，我们用路由器配置查看器查看bin文件<br>工具下载地址：<a href="http://www.ouyaoxiazai.com/soft/llrj/55/18061.html#dizhi" target="_blank" rel="noopener">http://www.ouyaoxiazai.com/soft/llrj/55/18061.html#dizhi</a><br>打开配置文件可以直接搜索一下username或者password，即可得到flag。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;WANPPPConnection instance=1 &gt;</span><br><span class="line">        &lt;Enable val=1 /&gt;</span><br><span class="line">        &lt;DefaultGateway val=10.177.144.1 /&gt;</span><br><span class="line">        &lt;Name val=pppoe_eth1_d /&gt;</span><br><span class="line">        &lt;Uptime val=671521 /&gt;</span><br><span class="line">        &lt;Username val=053700357621 /&gt;</span><br><span class="line">        &lt;Password val=210265 /&gt;</span><br><span class="line">        &lt;X_TP_IfName val=ppp0 /&gt;</span><br><span class="line">        &lt;X_TP_L2IfName val=eth1 /&gt;</span><br><span class="line">        &lt;X_TP_ConnectionId val=1 /&gt;</span><br><span class="line">        &lt;ExternalIPAddress val=10.177.150.82 /&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="隐写2"><a href="#隐写2" class="headerlink" title="隐写2"></a>隐写2</h3><p>得到一张图片，用binwalk分析一下，有一个压缩包，分离出来后图片上提示压缩包密码3位数，所以直接暴力破解，密码是871，解压后是一张3.jpg的图片，用winhex打开，在末尾看到一串字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1@g&#123;eTB1IEFyZSBhIGhAY2tlciE=&#125;</span><br></pre></td></tr></table></figure></p>
 <p>直接提交发现不对，然后对flag里面的字符串进行base64解码，得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\x79 \x30 \x75 \x20 \x41 \x72 \x65 \x20 </span><br><span class="line">\x61 \x20 \x68 \x40 \x63 \x6b \x65 \x72 </span><br><span class="line">\x21</span><br></pre></td></tr></table></figure></p>
 <p>接着我们将其转换成ASCII，在线转换地址：<a href="http://www.ab126.com/goju/1711.html" target="_blank" rel="noopener">http://www.ab126.com/goju/1711.html</a>,可以得到flag；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\y \0 \u \  \A \r \e \  </span><br><span class="line">\a \  \h \@ \c \k \e \r </span><br><span class="line">\!</span><br></pre></td></tr></table></figure>
 <p>这里提交的时候要把前面的f1@g改成flag，我也是试了几次才对的。</p>
+<h3 id="多种方法解决"><a href="#多种方法解决" class="headerlink" title="多种方法解决"></a>多种方法解决</h3><p>下载得到一个exe文件，无法运行，妖魔化winhex打开发现是一串base64编码，这里用base64转图片<br>地址：<a href="http://tool.chinaz.com/tools/imgtobase" target="_blank" rel="noopener">http://tool.chinaz.com/tools/imgtobase</a>可以得到一张二维码，直接扫一扫可以得到flag；</p>
+<h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><h3 id="中国菜刀"><a href="#中国菜刀" class="headerlink" title="中国菜刀"></a>中国菜刀</h3><h3 id="这么多数据包"><a href="#这么多数据包" class="headerlink" title="这么多数据包"></a>这么多数据包</h3><h3 id="隐写3"><a href="#隐写3" class="headerlink" title="隐写3"></a>隐写3</h3><p>下载得到一张图片，发现宽和高不太协调，想到png像素隐藏，参考余老师的一篇文章<br><a href="http://blog.csdn.net/saltyfish_yuch/article/details/78429431" target="_blank" rel="noopener">png像素隐写</a><br>用winhex改一下像素值就可以得到flag。</p>
+<h3 id="细心地大象"><a href="#细心地大象" class="headerlink" title="细心地大象"></a>细心地大象</h3><p>先用binwalk分离出加密压缩包，查看图片属性发现一串字符串在备注<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TVNEUzQ1NkFTRDEyM3p6</span><br></pre></td></tr></table></figure></p>
+<p>试了一下密码不对，又base64解码了一下，发现可以解开压缩包，得到另一张图片，这张图片就是用了之前的png像素隐藏，所以修改一下像素就可以得到flag。</p>
+<p>### </p>
 
       
     </div>
@@ -483,6 +489,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/13/happy-moctf-新春欢乐赛/" rel="prev" title="happy-moctf-新春欢乐赛">
+                happy-moctf-新春欢乐赛 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -594,7 +604,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -722,7 +732,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BugKu新赛季"><span class="nav-number">1.</span> <span class="nav-text">BugKu新赛季</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#杂项"><span class="nav-number">1.1.</span> <span class="nav-text">杂项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#签到题"><span class="nav-number">1.1.1.</span> <span class="nav-text">签到题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这是一张单纯的图片"><span class="nav-number">1.1.2.</span> <span class="nav-text">这是一张单纯的图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐写"><span class="nav-number">1.1.3.</span> <span class="nav-text">隐写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#telnet"><span class="nav-number">1.1.4.</span> <span class="nav-text">telnet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#眼见非实（ISCCCTF）"><span class="nav-number">1.1.5.</span> <span class="nav-text">眼见非实（ISCCCTF）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#又一张图片，还单纯吗"><span class="nav-number">1.1.6.</span> <span class="nav-text">又一张图片，还单纯吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#猜"><span class="nav-number">1.1.7.</span> <span class="nav-text">猜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宽带信息泄露"><span class="nav-number">1.1.8.</span> <span class="nav-text">宽带信息泄露</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐写2"><span class="nav-number">1.1.9.</span> <span class="nav-text">隐写2</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BugKu新赛季"><span class="nav-number">1.</span> <span class="nav-text">BugKu新赛季</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#杂项"><span class="nav-number">1.1.</span> <span class="nav-text">杂项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#签到题"><span class="nav-number">1.1.1.</span> <span class="nav-text">签到题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这是一张单纯的图片"><span class="nav-number">1.1.2.</span> <span class="nav-text">这是一张单纯的图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐写"><span class="nav-number">1.1.3.</span> <span class="nav-text">隐写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#telnet"><span class="nav-number">1.1.4.</span> <span class="nav-text">telnet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#眼见非实（ISCCCTF）"><span class="nav-number">1.1.5.</span> <span class="nav-text">眼见非实（ISCCCTF）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#又一张图片，还单纯吗"><span class="nav-number">1.1.6.</span> <span class="nav-text">又一张图片，还单纯吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#猜"><span class="nav-number">1.1.7.</span> <span class="nav-text">猜</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宽带信息泄露"><span class="nav-number">1.1.8.</span> <span class="nav-text">宽带信息泄露</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐写2"><span class="nav-number">1.1.9.</span> <span class="nav-text">隐写2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多种方法解决"><span class="nav-number">1.1.10.</span> <span class="nav-text">多种方法解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux"><span class="nav-number">1.1.11.</span> <span class="nav-text">linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中国菜刀"><span class="nav-number">1.1.12.</span> <span class="nav-text">中国菜刀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这么多数据包"><span class="nav-number">1.1.13.</span> <span class="nav-text">这么多数据包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐写3"><span class="nav-number">1.1.14.</span> <span class="nav-text">隐写3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#细心地大象"><span class="nav-number">1.1.15.</span> <span class="nav-text">细心地大象</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -756,7 +766,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.1k</span>
+    <span title="Site words total count">2.5k</span>
   
 </div>
 

@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="JWYBlog">
-<meta property="og:url" content="http://yoursite.com/tags/CTF/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/ctf/index.html">
 <meta property="og:site_name" content="JWYBlog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JWYBlog">
@@ -114,13 +114,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/CTF/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/ctf/"/>
 
 
 
 
 
-  <title>Tag: CTF | JWYBlog</title>
+  <title>Tag: -ctf | JWYBlog</title>
   
 
 
@@ -294,7 +294,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>CTF<small>Tag</small>
+        <h1>-ctf<small>Tag</small>
         </h1>
       </div>
 
@@ -306,9 +306,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/02/06/hgame（weekek-1）-未完待续/" itemprop="url">
+            <a class="post-title-link" href="/2018/02/11/BugKu新赛季（持续更新）/" itemprop="url">
               
-                <span itemprop="name">hgame（week_1）-----未完待续</span>
+                <span itemprop="name">BugKu新赛季（持续更新）</span>
               
             </a>
         
@@ -316,9 +316,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-06T20:28:59+08:00"
-              content="2018-02-06" >
-          02-06
+              datetime="2018-02-11T13:00:00+08:00"
+              content="2018-02-11" >
+          02-11
         </time>
       </div>
 
@@ -382,7 +382,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -528,7 +528,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.1k</span>
+    <span title="Site words total count">2.5k</span>
   
 </div>
 
@@ -1106,6 +1106,48 @@
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+         error: function(newcounter, error) {
                 console.log('Failed to create');
               }
             });
