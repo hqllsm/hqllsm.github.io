@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="JWYBlog">
 <meta property="og:description" content="PHP在CTF的WEB题经常有应用，这里简要记录一下自己在学习PHP的所见所闻，供自己复习使用，不定期更新…… 变量类型变量类型整型、浮点型、布尔型、数组、对象、NULL、资源（变量就像一个盒子，盒子里面装的是变量的值，不同的盒子就是变量类型） 12345678910111213141516171819202122231)整型[integer] 数学中的整数2)浮点型[float、double]">
 <meta property="og:image" content="http://yoursite.com/2018/02/18/PHP入门到放弃-1/qufen.png">
-<meta property="og:updated_time" content="2018-02-17T17:37:33.015Z">
+<meta property="og:updated_time" content="2018-02-17T18:38:44.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP入门到放弃-1">
 <meta name="twitter:description" content="PHP在CTF的WEB题经常有应用，这里简要记录一下自己在学习PHP的所见所闻，供自己复习使用，不定期更新…… 变量类型变量类型整型、浮点型、布尔型、数组、对象、NULL、资源（变量就像一个盒子，盒子里面装的是变量的值，不同的盒子就是变量类型） 12345678910111213141516171819202122231)整型[integer] 数学中的整数2)浮点型[float、double]">
@@ -252,7 +252,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -337,7 +337,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T00:49:47+08:00">
                 2018-02-18
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  373
+                  904
                 </span>
               
 
@@ -412,7 +412,24 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1)整型[integer]</span><br><span class="line"> 数学中的整数</span><br><span class="line"></span><br><span class="line">2)浮点型[float、double]</span><br><span class="line"> 数学中的小数</span><br><span class="line"></span><br><span class="line">3)字符串[string]</span><br><span class="line"> 一串字符</span><br><span class="line"></span><br><span class="line">4)布尔[boolean]</span><br><span class="line"> 真假</span><br><span class="line"></span><br><span class="line">5)数组[array]</span><br><span class="line"> 键值对复合数据</span><br><span class="line"></span><br><span class="line">6)对象[object]</span><br><span class="line"> 暂时不考虑QAQ</span><br><span class="line"></span><br><span class="line">7)NULL</span><br><span class="line"> 没有值</span><br><span class="line"></span><br><span class="line">8)资源[resource]</span><br><span class="line"> 资源是一种特殊的变量类型，保存了到外部资源的一个引用：如打开文件、数据库连接、图形画布区域等</span><br></pre></td></tr></table></figure>
 <h3 id="如何区分变量类型"><a href="#如何区分变量类型" class="headerlink" title="如何区分变量类型"></a>如何区分变量类型</h3><p>变量值并不是只存储变量值，还存储了它的类型<br><img src="/2018/02/18/PHP入门到放弃-1/qufen.png" alt="qufen"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$a = 3;//整型</span><br><span class="line">$b = 3.14;//浮点型</span><br><span class="line">$c = null;//null型</span><br><span class="line">$d = &apos;helloworld&apos;;//字符串型</span><br><span class="line">$e = true;//布尔型</span><br><span class="line"></span><br><span class="line">echo $D;//Notice: Undefined variable</span><br></pre></td></tr></table></figure></p>
 <h3 id="变量名称的命名规范"><a href="#变量名称的命名规范" class="headerlink" title="变量名称的命名规范"></a>变量名称的命名规范</h3><p>[a-z]-[A-Z]-[0-9]以及下划线<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1)区分大小写</span><br><span class="line">2)不能以数字开头</span><br><span class="line">//正确命名</span><br><span class="line">$a</span><br><span class="line">$_</span><br><span class="line">$c3</span><br><span class="line">//错误命名</span><br><span class="line">$_%</span><br><span class="line">$3c</span><br></pre></td></tr></table></figure></p>
-<h2 id="变量检测"><a href="#变量检测" class="headerlink" title="变量检测"></a>变量检测</h2><h2 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h2><h2 id="调试打印变量"><a href="#调试打印变量" class="headerlink" title="调试打印变量"></a>调试打印变量</h2><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><h2 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h2><h2 id="动态变量名"><a href="#动态变量名" class="headerlink" title="动态变量名"></a>动态变量名</h2>
+<h2 id="变量检测"><a href="#变量检测" class="headerlink" title="变量检测"></a>变量检测</h2><p>ehco一个不存在的变量，会报notice级别的错误，所以有必要检测一下这个变量是否存在；<br>isset–检测变量是否设置<br>已声明的变量会返回true<br>未声明的变量会返回false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$b = null;</span><br><span class="line">$c = false;</span><br><span class="line">$d = 0;</span><br><span class="line">$e = &apos; &apos;;</span><br><span class="line">if(isset($a))&#123;</span><br><span class="line">	echo &quot;变量a存在&lt;br/&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">	echo &quot;变量a不存在&lt;br/&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(isset($b))&#123;</span><br><span class="line">	echo &quot;变量b存在&lt;br/&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">	echo &quot;变量b不存在&lt;br/&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(isset($c))&#123;</span><br><span class="line">	echo &quot;变量c存在&lt;br/&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">	echo &quot;变量c不存在&lt;br/&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">变量a不存在</span><br><span class="line">变量b不存在</span><br><span class="line">变量c存在</span><br></pre></td></tr></table></figure>
+<p>对于值为NULL的变量，也返回false，因为null没有值。<br>未曾声明的变量当然也是不存在的。</p>
+<h2 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h2><ol>
+<li><p>检测一个变量php将它存储成什么类型<br>–gettype（获取变量的类型） [现成的系统函数]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$b = null;</span><br><span class="line">echo gettype($b);</span><br><span class="line">echo &quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">$c = false;</span><br><span class="line">echo gettype($c);</span><br><span class="line">echo &quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">$d = 0;</span><br><span class="line">echo gettype($d);</span><br><span class="line">echo &quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">$e = &apos; &apos;;</span><br><span class="line">echo gettype($e);</span><br><span class="line">echo &quot;&lt;br&gt;&quot;;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">NULL</span><br><span class="line">boolean</span><br><span class="line">integer</span><br><span class="line">string</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断变量是否是某种类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">is_float() &amp; is_double()</span><br><span class="line">is_int() &amp; is_integer()</span><br><span class="line">is_string()</span><br><span class="line">is_object()</span><br><span class="line">is_array()</span><br><span class="line">is_resource()</span><br><span class="line">is_bool()</span><br><span class="line">is_null()</span><br><span class="line"></span><br><span class="line">//eg:</span><br><span class="line">$b = null;</span><br><span class="line"></span><br><span class="line">if (is_null($b)) &#123;</span><br><span class="line">	echo &quot;b为null&lt;br&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">	echo &quot;b不为null&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="调试打印变量"><a href="#调试打印变量" class="headerlink" title="调试打印变量"></a>调试打印变量</h2><ol>
+<li>echo 字符串，数字</li>
+<li>print_r 打印层次化的数据，比如：数组、对象</li>
+<li>var_dump 打印变量的类型及其值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a = &apos;hello&apos;;</span><br><span class="line">$b = array(1,2,&quot;3&quot;);</span><br><span class="line">$c = false;</span><br><span class="line">$d = null;</span><br><span class="line">$e = 18;</span><br><span class="line">$f = true;</span><br><span class="line"></span><br><span class="line">echo $a,&apos;&lt;br&gt;&apos;,$b,&apos;&lt;br&gt;&apos;,$c,&apos;&lt;br&gt;&apos;,$d,&apos;&lt;br&gt;&apos;,$e,&apos;&lt;br&gt;&apos;,$f,&apos;&lt;br&gt;&apos;,&apos;&lt;hr&gt;&apos;;</span><br><span class="line"></span><br><span class="line">print_r($b);echo &apos;&lt;br&gt;&apos;;</span><br><span class="line">print_r($c);echo &apos;&lt;br&gt;&apos;;</span><br><span class="line">print_r($d);echo &apos;&lt;br&gt;&apos;;</span><br><span class="line">print_r($f);echo &apos;&lt;br&gt;&apos;;</span><br><span class="line">echo &apos;&lt;hr&gt;&apos;;</span><br><span class="line">var_dump($c);echo &apos;&lt;br&gt;&apos;;</span><br><span class="line">var_dump($d);echo &apos;&lt;br&gt;&apos;;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">-----------------------------------</span><br><span class="line">//布尔的true会打印1，false和null什么都不显示</span><br><span class="line">hello</span><br><span class="line">Array</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">18</span><br><span class="line">1</span><br><span class="line">------------------------------------</span><br><span class="line">Array ( [0] =&gt; 1 [1] =&gt; 2 [2] =&gt; 3 ) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">------------------------------------</span><br><span class="line">//布尔型数据不要用echo和print_r打印，容易干扰我们，用var_dump打印布尔和null</span><br><span class="line">bool(false) </span><br><span class="line">NULL</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><h2 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h2><h2 id="动态变量名"><a href="#动态变量名" class="headerlink" title="动态变量名"></a>动态变量名</h2>
       
     </div>
     
@@ -591,10 +608,10 @@ var jiathis_config={
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -619,7 +636,7 @@ var jiathis_config={
                 <a href="/archives">
               
                   <span class="site-state-item-count">7</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -632,7 +649,7 @@ var jiathis_config={
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -787,12 +804,12 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.3k</span>
+    <span title="Site words total count">6.8k</span>
   
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
