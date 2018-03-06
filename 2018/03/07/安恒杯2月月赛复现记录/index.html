@@ -88,10 +88,12 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/07/安恒杯2月月赛复现记录/index.html">
 <meta property="og:site_name" content="JWYBlog">
 <meta property="og:description" content="手快抢了一个复现账号，就去看看这些个难题嘤嘤嘤！ Cipher题目描述12345题目名称Cipher题目说明还能提示什么呢？公平的玩吧（密钥自己找） Dncnoqqfliqrpgeklwmppu 公平的玩———&amp;gt;playfair密码（以前没有遇到过QAQ） playfair密码是需要秘钥的;传送门 编制密码表–还原明文–得到flag 凯撒？替换？呵呵！题目描述12345题目名称凯撒？替换？呵">
-<meta property="og:updated_time" content="2018-03-06T18:12:40.625Z">
+<meta property="og:image" content="http://yoursite.com/2018/03/07/安恒杯2月月赛复现记录/xiufu.png">
+<meta property="og:updated_time" content="2018-03-06T18:31:40.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安恒杯2月月赛复现记录">
 <meta name="twitter:description" content="手快抢了一个复现账号，就去看看这些个难题嘤嘤嘤！ Cipher题目描述12345题目名称Cipher题目说明还能提示什么呢？公平的玩吧（密钥自己找） Dncnoqqfliqrpgeklwmppu 公平的玩———&amp;gt;playfair密码（以前没有遇到过QAQ） playfair密码是需要秘钥的;传送门 编制密码表–还原明文–得到flag 凯撒？替换？呵呵！题目描述12345题目名称凯撒？替换？呵">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/07/安恒杯2月月赛复现记录/xiufu.png">
 
 
 
@@ -380,7 +382,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  618
+                  937
                 </span>
               
 
@@ -417,17 +419,17 @@
 <p>有思路2可以得到flag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FLAG&#123; SUBSTITUTION CIPHER DECRYPTION IS ALWAYS EASY JUST LIKE A PIECE OF CAKE&#125;</span><br><span class="line"></span><br><span class="line">#替换成小写提交正确</span><br></pre></td></tr></table></figure></p>
 <h1 id="USB"><a href="#USB" class="headerlink" title="USB"></a>USB</h1><p>题目描述<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目名称</span><br><span class="line">USB</span><br><span class="line"></span><br><span class="line">题目说明</span><br><span class="line">Do your konw usb??</span><br></pre></td></tr></table></figure></p>
 <p>考点：<br>    usb协议的分析<br>    压缩包的修复<br>    对键盘记录的分析<br>    维吉尼亚密码<br>    栅栏密码<br>    脚本编写能力</p>
-<p>题目文件：<br>    ftm文件<br>        winhex、binwalk分离，可知道是一个usb流量文件<br>        考虑使用python的scapy模块编写脚本自动提取,提取的到key{XINAN}</p>
+<p>题目文件：<br>ftm文件<br>    winhex、binwalk分离，可知道是一个usb流量文件<br>    考虑使用python的scapy模块编写脚本自动提取,提取的到key{XINAN}</p>
 <p>脚本如下(貌似有点小问题)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">#show_keyboard.py</span><br><span class="line">from scapy.all import * </span><br><span class="line">VISIBLE_KEY_CODES=&#123;</span><br><span class="line">			4:&quot;A&quot;,</span><br><span class="line">			5:&quot;B&quot;,</span><br><span class="line">			6:&quot;C&quot;,</span><br><span class="line">			7:&quot;D&quot;,</span><br><span class="line">			8:&quot;E&quot;,</span><br><span class="line">			9:&quot;F&quot;,</span><br><span class="line">			10:&quot;G&quot;,</span><br><span class="line">			11:&quot;H&quot;,</span><br><span class="line">			12:&quot;I&quot;,</span><br><span class="line">			13:&quot;J&quot;,</span><br><span class="line">			14:&quot;K&quot;,</span><br><span class="line">			15:&quot;L&quot;,</span><br><span class="line">			16:&quot;M&quot;,</span><br><span class="line">			17:&quot;N&quot;,</span><br><span class="line">			18:&quot;O&quot;,</span><br><span class="line">			19:&quot;P&quot;,</span><br><span class="line">			20:&quot;Q&quot;,</span><br><span class="line">			21:&quot;R&quot;,</span><br><span class="line">			22:&quot;S&quot;,</span><br><span class="line">			23:&quot;T&quot;,</span><br><span class="line">			24:&quot;U&quot;,</span><br><span class="line">			25:&quot;V&quot;,</span><br><span class="line">			26:&quot;W&quot;,</span><br><span class="line">			27:&quot;X&quot;,</span><br><span class="line">			28:&quot;Y&quot;,</span><br><span class="line">			29:&quot;Z&quot;,</span><br><span class="line">			30:&quot;1&quot;,</span><br><span class="line">			31:&quot;2&quot;,</span><br><span class="line">			32:&quot;3&quot;,</span><br><span class="line">			33:&quot;4&quot;,</span><br><span class="line">			34:&quot;5&quot;,</span><br><span class="line">			35:&quot;6&quot;,</span><br><span class="line">			36:&quot;7&quot;,</span><br><span class="line">			37:&quot;8&quot;,</span><br><span class="line">			38:&quot;9&quot;,</span><br><span class="line">			39:&quot;0&quot;,</span><br><span class="line">			40:&quot;\n&quot;,</span><br><span class="line">			44:&quot;&quot;,</span><br><span class="line">			45:&quot;&quot;,</span><br><span class="line">			46:&quot;=&quot;,</span><br><span class="line">			47:&quot;&#123;&quot;,</span><br><span class="line">			48:&quot;&#125;&quot;,</span><br><span class="line">			49:&quot;\\&quot;,</span><br><span class="line">			51:&quot;;&quot;,</span><br><span class="line">			52:&quot;&apos;&quot;,</span><br><span class="line">			53:&quot;~&quot;,</span><br><span class="line">			54:&quot;,&quot;,</span><br><span class="line">			55:&quot;.&quot;,</span><br><span class="line">			56:&quot;/&quot;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pkts = rdpcap(&quot;key.pcap&quot;)</span><br><span class="line">msg = &quot;&quot;</span><br><span class="line">for packet in pkts:</span><br><span class="line">	keybord_data = packet.load[-8:]</span><br><span class="line">	key_code = ord(keybord_data[2])</span><br><span class="line">	ch = VISIBLE_KEY_CODES.get(key_code,False)</span><br><span class="line">	if ch:</span><br><span class="line">		msg += ch</span><br><span class="line">print msg</span><br></pre></td></tr></table></figure></p>
-<pre><code>rar压缩包
-    1、直接解压提示233.png头部损坏（进行修复）
-    ![](/安恒杯2月月赛复现记录/xiufu.png)
-    2、图片在分析工具下可以得到一张二维码
-    （扫码得到ci{v3erf_0tygidv2_fc0}，这个跟前面的KEY{XINAN}，应该是一种密码，这里考查的是维吉尼亚密码。）
-    [揭秘传送门](https://atomcated.github.io/Vigenere/)
-    3、上一步得到fa{i3eei_0llgvgn2_sc0
-    栅栏解密可得flag
-</code></pre>
+<p>rar压缩包<br>        1、直接解压提示233.png头部损坏（进行修复）<br>        <img src="/2018/03/07/安恒杯2月月赛复现记录/xiufu.png" alt=""><br>        2、图片在分析工具下可以得到一张二维码<br>        （扫码得到ci{v3erf_0tygidv2_fc0}，这个跟前面的KEY{XINAN}，应该是一种密码，这里考查的是维吉尼亚密码。）<br>        <a href="https://atomcated.github.io/Vigenere/" target="_blank" rel="noopener">揭秘传送门</a><br>        3、上一步得到fa{i3eei_0llgvgn2_sc0<br>        栅栏解密可得flag</p>
+<h1 id="溯源"><a href="#溯源" class="headerlink" title="溯源"></a>溯源</h1><p>题目描述<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目名称</span><br><span class="line">溯源</span><br><span class="line"></span><br><span class="line">题目说明</span><br><span class="line">http://ip/secret</span><br></pre></td></tr></table></figure></p>
+<p>出题思路:<br>这道题目是一次简单的溯源流程，首先拿到一个secret文件，通过分析找到后门中隐藏的url，因为题目要提前出好，不能预先知道ip，所以把文件和web服务放到了一块，找url的过程简化为只需要找到后缀。</p>
+<p>考点:<br>    磁盘挂载<br>    extendelete的使用<br>    对chm后门的分析<br>    php反序列化</p>
+<p>1、文件为linux下磁盘挂载文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount secret /home/tmp</span><br></pre></td></tr></table></figure></p>
+<p>2、挂载一下，cd进去cat一下，发现了后门已经被删除字样，估计需要做一下磁盘恢复。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#卸载磁盘后执行下面的命令可得到一个hack.chm文件</span><br><span class="line">extundelete secret --inode 2</span><br></pre></td></tr></table></figure></p>
+<p>3、后门分析（windows环境）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在同一目录下新建一个hack文件夹</span><br><span class="line">hh -decompile hack hack.chm</span><br></pre></td></tr></table></figure></p>
+<p>4、分离出来的，在exp.htm文件中<code>http://xxx.xxx.xxx.xxx/C_0uT.php</code>，猜测需要访问这个页面。<br>5、扫描端口发现8080端口开放着web服务，简单代码审计，反序列化加文件上传<br>6、使用80端口（因为限制了只能本地访问）的web服务上传一句话木马，然后getshell<br>7、远程执行命可以获取flag</p>
+
       
     </div>
     
@@ -772,7 +774,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cipher"><span class="nav-number">1.</span> <span class="nav-text">Cipher</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#凯撒？替换？呵呵！"><span class="nav-number">2.</span> <span class="nav-text">凯撒？替换？呵呵！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#USB"><span class="nav-number">3.</span> <span class="nav-text">USB</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cipher"><span class="nav-number">1.</span> <span class="nav-text">Cipher</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#凯撒？替换？呵呵！"><span class="nav-number">2.</span> <span class="nav-text">凯撒？替换？呵呵！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#USB"><span class="nav-number">3.</span> <span class="nav-text">USB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#溯源"><span class="nav-number">4.</span> <span class="nav-text">溯源</span></a></li></ol></div>
             
 
           </div>
@@ -806,7 +808,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.5k</span>
+    <span title="Site words total count">7.8k</span>
   
 </div>
 
