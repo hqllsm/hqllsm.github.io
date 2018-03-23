@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CTF,SQL," />
 
 
 
@@ -82,12 +82,13 @@
 
 
 <meta name="description" content="前言上一次我们讲了最基础的联合查询，眼看就来到了Less-5了，这里我接触了更加摸不着头脑的盲注，不过这也让小萌新的我好奇心倍增，那么就让我们一起走进盲注的世界吧，感受一下一脸懵逼的感觉。 盲注及其分类盲注什么是盲注呢？盲注就是在SQL注入过程中，当执行完SQL语句是，我们所查询的数据没办法回显到我们的前端页面，这是我们就只能构造一些逻辑判断来猜解，这个过程就是盲注啦哈哈哈哈（废话一堆）。 分类">
+<meta name="keywords" content="CTF,SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL-LABS入门到放弃2（part1）">
 <meta property="og:url" content="http://ju5tw4nty0u.top/2018/03/17/SQL-LABS入门到放弃2（part1）/index.html">
 <meta property="og:site_name" content="JWYBlog">
 <meta property="og:description" content="前言上一次我们讲了最基础的联合查询，眼看就来到了Less-5了，这里我接触了更加摸不着头脑的盲注，不过这也让小萌新的我好奇心倍增，那么就让我们一起走进盲注的世界吧，感受一下一脸懵逼的感觉。 盲注及其分类盲注什么是盲注呢？盲注就是在SQL注入过程中，当执行完SQL语句是，我们所查询的数据没办法回显到我们的前端页面，这是我们就只能构造一些逻辑判断来猜解，这个过程就是盲注啦哈哈哈哈（废话一堆）。 分类">
-<meta property="og:updated_time" content="2018-03-22T07:15:33.116Z">
+<meta property="og:updated_time" content="2018-03-23T06:00:36.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL-LABS入门到放弃2（part1）">
 <meta name="twitter:description" content="前言上一次我们讲了最基础的联合查询，眼看就来到了Less-5了，这里我接触了更加摸不着头脑的盲注，不过这也让小萌新的我好奇心倍增，那么就让我们一起走进盲注的世界吧，感受一下一脸懵逼的感觉。 盲注及其分类盲注什么是盲注呢？盲注就是在SQL注入过程中，当执行完SQL语句是，我们所查询的数据没办法回显到我们的前端页面，这是我们就只能构造一些逻辑判断来猜解，这个过程就是盲注啦哈哈哈哈（废话一堆）。 分类">
@@ -249,7 +250,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -334,7 +335,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-17T19:51:21+08:00">
                 2018-03-17
@@ -672,6 +673,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/CTF/" rel="tag"><i class="fa fa-tag"></i> CTF</a>
+          
+            <a href="/tags/SQL/" rel="tag"><i class="fa fa-tag"></i> SQL</a>
+          
+        </div>
+      
 
       
       
@@ -690,6 +699,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/23/SQL-LABS入门到放弃3（part1）/" rel="prev" title="SQL-LABS入门到放弃3（part1）">
+                SQL-LABS入门到放弃3（part1） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -772,10 +785,10 @@ var jiathis_config={
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -799,8 +812,8 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -812,8 +825,8 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -992,12 +1005,12 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.0k</span>
+    <span title="Site words total count">16.6k</span>
   
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
