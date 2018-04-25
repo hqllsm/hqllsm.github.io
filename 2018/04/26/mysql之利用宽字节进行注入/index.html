@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="原理介绍这里直接引用天书里面的介绍（有点懒233333针对’和\的过滤，我们在此介绍一下宽字节注入的原理和基本用法。123456mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：%d">
+<meta name="description" content="原理介绍这里直接引用天书里面的介绍（有点懒233333针对’和\的过滤，我们在此介绍一下宽字节注入的原理和基本用法。 123456mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：%">
 <meta name="keywords" content="CTF,SQL,WP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql之利用宽字节进行注入">
 <meta property="og:url" content="http://ju5tw4nty0u.top/2018/04/26/mysql之利用宽字节进行注入/index.html">
 <meta property="og:site_name" content="JWYBlog">
-<meta property="og:description" content="原理介绍这里直接引用天书里面的介绍（有点懒233333针对’和\的过滤，我们在此介绍一下宽字节注入的原理和基本用法。123456mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：%d">
+<meta property="og:description" content="原理介绍这里直接引用天书里面的介绍（有点懒233333针对’和\的过滤，我们在此介绍一下宽字节注入的原理和基本用法。 123456mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：%">
 <meta property="og:image" content="http://ju5tw4nty0u.top/2018/04/26/mysql之利用宽字节进行注入/kuming.png">
 <meta property="og:image" content="http://ju5tw4nty0u.top/2018/04/26/mysql之利用宽字节进行注入/ziduan.png">
 <meta property="og:image" content="http://ju5tw4nty0u.top/2018/04/26/mysql之利用宽字节进行注入/flag.png">
-<meta property="og:updated_time" content="2018-04-25T18:25:08.892Z">
+<meta property="og:updated_time" content="2018-04-25T18:28:09.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql之利用宽字节进行注入">
-<meta name="twitter:description" content="原理介绍这里直接引用天书里面的介绍（有点懒233333针对’和\的过滤，我们在此介绍一下宽字节注入的原理和基本用法。123456mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：%d">
+<meta name="twitter:description" content="原理介绍这里直接引用天书里面的介绍（有点懒233333针对’和\的过滤，我们在此介绍一下宽字节注入的原理和基本用法。 123456mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：%">
 <meta name="twitter:image" content="http://ju5tw4nty0u.top/2018/04/26/mysql之利用宽字节进行注入/kuming.png">
 
 
@@ -254,7 +254,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            recherche
+            Suche
           </a>
         </li>
       
@@ -339,7 +339,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T01:02:17+08:00">
                 2018-04-26
@@ -419,13 +419,14 @@
       
 
       
-        <h1 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h1><p>这里直接引用天书里面的介绍（有点懒233333<br>针对<code>’</code>和<code>\</code>的过滤，我们在此介绍一下宽字节注入的原理和基本用法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。</span><br><span class="line">我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。</span><br><span class="line">因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：</span><br><span class="line">%df 吃掉 \ 具体的原因是 urlencode(\&apos;) = %5c%27，我们在%5c%27 前面添加%df，形</span><br><span class="line">成%df%5c%27，而上面提到的 mysql 在GBK 编码方式的时候会将两个字节当做一个汉字，此</span><br><span class="line">事%df%5c 就是一个汉字，%27 则作为一个单独的符号在外面，同时也就达到了我们的目的。</span><br></pre></td></tr></table></figure></p>
+        <h1 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h1><p>这里直接引用天书里面的介绍（有点懒233333<br>针对<code>’</code>和<code>\</code>的过滤，我们在此介绍一下宽字节注入的原理和基本用法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。</span><br><span class="line">我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。</span><br><span class="line">因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：</span><br><span class="line">%df 吃掉 \ 具体的原因是 urlencode(\&apos;) = %5c%27，我们在%5c%27 前面添加%df，形</span><br><span class="line">成%df%5c%27，而上面提到的 mysql 在GBK 编码方式的时候会将两个字节当做一个汉字，此</span><br><span class="line">事%df%5c 就是一个汉字，%27 则作为一个单独的符号在外面，同时也就达到了我们的目的。</span><br></pre></td></tr></table></figure>
 <h1 id="Bugku的一道题目"><a href="#Bugku的一道题目" class="headerlink" title="Bugku的一道题目"></a>Bugku的一道题目</h1><p><a href="http://103.238.227.13:10083/" target="_blank" rel="noopener">题目地址</a></p>
 <ol>
 <li>测试发现找不到注入点，查看源代码发现编码方式为<code>gb2312</code>，于是便想到是不是宽字节注入，当提交<code>id=1%df&#39;</code>时出现了报错信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;&apos;1運&apos;&apos; LIMIT 1&apos; at line 1</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>这说明了确实存在宽字节注入，我们开始构造payload</p>
+<p>这说明了确实存在宽字节注入，我们开始构造payload;</p>
 <ol>
 <li>数据库<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://103.238.227.13:10083/index.php?id=1%df&apos; union select 1,database()--+</span><br></pre></td></tr></table></figure>
 </li>
@@ -625,10 +626,10 @@ var jiathis_config={
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table Des Matières
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Ensemble
+            Übersicht
           </li>
         </ul>
       
@@ -653,7 +654,7 @@ var jiathis_config={
                 <a href="/archives">
               
                   <span class="site-state-item-count">16</span>
-                  <span class="site-state-item-name">articles</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -666,7 +667,7 @@ var jiathis_config={
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
             
@@ -854,7 +855,7 @@ var jiathis_config={
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -862,7 +863,7 @@ var jiathis_config={
 
 
 
-  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
